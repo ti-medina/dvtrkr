@@ -1,0 +1,74 @@
+.main {
+    display: grid;
+    transition: 1s;
+    grid-template-columns: 0 auto;
+}
+
+.main:has(.leftBar.active) {
+    grid-template-columns: 230px auto;
+  }
+
+
+.leftBar {
+    position: relative;
+    background-color: var(--dark-bg);
+    color: var(--secondary-fg);
+
+    display: flex;
+    flex-direction: column ;
+    overflow: clip;
+}
+
+.leftBar .close {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    font-size: small;
+    padding: 0 2px 0 2px;
+    background: transparent;
+}
+
+.btnGrp {
+    margin: var(--padding-md);
+    margin-right: calc(var(--padding-md) + 4px);
+    margin-top: calc(var(--padding-md) + 24px);
+    padding: var(--padding-md);
+    gap: var(--padding-md);
+
+    border: 2px solid white;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.btnGrp::before {
+    content: 'Actions';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 0 8px 0 8px;
+    background: var(--dark-bg);
+}
+
+.btn {
+    background-color: var(--primary-bg-10);
+    border-radius: 4px;
+    text-align: center;
+    padding: var(--padding-sm);
+    gap: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: clip;
+    
+    transition: all .4s ease;
+}
+
+.btn:hover {
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: all .4s ease;
+}
+

@@ -1,0 +1,72 @@
+tr:not(:hover).sel {
+  background-color: var(--info-bg-70) !important;
+  color: var(--secondary-fg);
+}
+
+.cards {
+    display: flex;
+    gap: var(--padding-xs);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .card {
+    padding: var(--padding-xs);
+    border: solid 1px black;
+    border-radius: 4px;
+    box-shadow: 4px 4px 2px #454343;
+
+    transition: all .2s;
+  }
+
+  .card:hover {
+    transform: scale(1.25);
+    background-color: rgb(72, 206, 251);
+    color:#454343;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .card:hover + *,
+  .card:has(+ :hover) {
+    transform: scale(1.15);
+    background-color: rgb(120, 218, 250);
+  }
+  .card:hover + * + *,
+  .card:has( + * + :hover) {
+    transform: scale(1.1);
+    background-color: rgb(168, 227, 248);
+  }
+  .card:hover + * + * + *,
+  .card:has( + * + * + :hover) {
+    transform: scale(1.05);
+    background-color: rgb(210, 239, 249);
+  }
+
+  .card.sel {
+    background-color: blue;
+    font-size: blod;
+    transform: scale(1.1);
+  }
+
+  
+.anc {
+  color: #0000EE;
+}
+.anc:visited {
+  color: #551A8B;
+}
+
+tr:hover .anc,
+tr.sel .anc,
+.anc:hover {
+  color: white;
+  font-weight: bold;
+}
+.anc:hover {
+  text-decoration: underline;
+}
+
+  
+  

@@ -1,0 +1,119 @@
+.cont {
+    position: sticky;
+    top: 0;
+    line-height: 1;
+}
+
+.hdr {
+    display: flex;
+    background-color: var(--dark-bg);
+    color: var(--primary-bg);
+    width: 100%;
+    padding: var(--padding-md, 15px);
+}
+
+div:has( > .hdr) {
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-fg-90);
+    gap: var(--padding-md, 15px);
+}
+
+.logo span {
+    margin-top: auto;
+    margin-top: 2px;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.mnu {
+    display: flex;
+    width: 100%;
+    gap: var(--padding-md, 15px);
+    margin-left: var(--padding-lg, 25px);
+    align-self: center;
+}
+
+.mnu>li {
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.mnu>li:hover,
+.submenu>li:hover {
+    background-color: var(--primary-bg);
+    color: var(--dark-bg);
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-bg);
+    color: var(--primary-bg);
+    padding: 0;
+    position: absolute;
+    z-index: 1000;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+.submenu > li {
+    padding: var(--padding-sm, 8px) var(--padding-md, 15px) var(--padding-sm, 8px) var(--padding-md, 15px);
+    border-radius: 5px;
+}
+
+.lvl1 {
+    border-radius: 0 0 5px 5px;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    transform: scaleY(0);
+    transition: transform .6s;
+    transform-origin: top;
+}
+
+.mnu > li:hover .lvl1,
+.lvl1:hover {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform .6s;
+}
+
+.lvl2 {
+    border-radius: 5px;
+    left: 100%;
+    transform: translateY(-23px) scaleX(0);
+    transform-origin: left;
+
+    /* Hide while lvl1 loads: */
+    overflow: hidden;
+    opacity: 0;
+}
+
+.lvl1 > li:hover .lvl2,
+.lvl2:hover {   
+    transform: translateY(-23px) scaleX(1);
+    opacity: 1;
+    transition: transform .6s;
+}
+
+.brdc {
+    background-color: var(--secondary-bg-50);
+    color: var(--secondary-fg);
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 4px 0px 6px 8px;
+}
+
+.brdc>div {
+    display: flex;
+    gap: inherit;
+}
